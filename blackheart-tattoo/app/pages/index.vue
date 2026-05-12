@@ -5,7 +5,7 @@
             <span class="logo">Blackheart Tattoo & Piercing</span>
             <div class="nav-links">
                 <a href="#">Künstler</a>
-                <a href="#">Galerie</a>
+                <NuxtLink to="/gallery" class="btn">Galerie</NuxtLink>
                 <NuxtLink to="/booking" class="btn">Termin buchen</NuxtLink>
             </div>
         </nav>
