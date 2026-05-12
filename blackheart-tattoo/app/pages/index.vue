@@ -58,6 +58,7 @@
     padding: 0;
 }
 
+html,
 body {
     overflow-x: hidden;
     background: #0a0a0a;
@@ -65,48 +66,63 @@ body {
     font-family: Georgia, serif;
 }
 
+body {
+    width: 100%;
+}
+
 .page {
     min-height: 100vh;
     width: 100%;
 }
 
+/* NAV */
+
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
     padding: 1.5rem 2rem;
     border-bottom: 1px solid #222;
+    flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 1.2rem;
-    letter-spacing: 0.2em;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
     color: #e8dfd3;
+    line-height: 1.3;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
     color: #7a7065;
     text-decoration: none;
     letter-spacing: 0.1em;
+    font-size: 0.95rem;
 }
 
 .nav-links a:hover {
     color: #e8dfd3;
 }
 
+/* BUTTON */
+
 .btn {
     background: #F5F5DC;
     color: #000000;
-    padding: 0.6em 1.8em;
+    padding: 0.75em 1.6em;
     text-decoration: none;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     display: inline-block;
+    transition: 0.2s ease;
+    text-align: center;
 }
 
 .btn:hover {
@@ -114,13 +130,15 @@ body {
     color: #F5F5DC;
 }
 
+/* HERO */
+
 .hero {
     min-height: 90vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     border-bottom: 1px solid #222;
     background-image: url('/needle.jpg');
     background-size: cover;
@@ -130,15 +148,17 @@ body {
 .eyebrow {
     color: #F5F5DC;
     letter-spacing: 0.3em;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 h1 {
-    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-size: clamp(2.8rem, 9vw, 6rem);
     color: #e8dfd3;
-    line-height: 1;
+    line-height: 0.95;
     margin-bottom: 1.5rem;
+    max-width: 10ch;
 }
 
 h1 em {
@@ -148,11 +168,13 @@ h1 em {
 
 .sub {
     color: #e8dfd3;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     max-width: 40ch;
     margin-bottom: 2rem;
     line-height: 1.7;
 }
+
+/* SECTIONS */
 
 .section {
     padding: 5rem 2rem;
@@ -160,10 +182,13 @@ h1 em {
 }
 
 .section h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.8rem);
     color: #e8dfd3;
     margin-bottom: 2.5rem;
+    line-height: 1.1;
 }
+
+/* GRID */
 
 .grid {
     display: grid;
@@ -179,6 +204,7 @@ h1 em {
 
 .photo {
     aspect-ratio: 1;
+    width: 100%;
     background: #1a1a1a;
     display: flex;
     align-items: center;
@@ -193,12 +219,15 @@ h1 em {
     font-size: 0.8rem;
     letter-spacing: 0.15em;
     margin-bottom: 0.4rem;
+    line-height: 1.4;
 }
 
 .name {
     color: #e8dfd3;
     font-size: 1.3rem;
 }
+
+/* CTA */
 
 .cta {
     padding: 5rem 2rem;
@@ -209,62 +238,85 @@ h1 em {
 }
 
 .cta h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.8rem);
     color: #e8dfd3;
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .cta p {
     color: #7a7065;
     margin-bottom: 2rem;
+    max-width: 45ch;
+    margin-inline: auto;
+    line-height: 1.7;
 }
 
-@media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
+/* TABLET */
 
-    .logo {
-        font-size: 1rem;
-        text-align: center;
-        letter-spacing: 0.1em;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .hero {
-        padding: 2rem 1rem;
+        padding: 4rem 1.5rem;
+    }
+
+    .section,
+    .cta {
+        padding: 4rem 1.5rem;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .hero {
         min-height: 80vh;
+        padding: 3rem 1.25rem;
+        justify-content: center;
+    }
+
+    h1 {
+        max-width: 100%;
     }
 
     .sub {
         font-size: 1rem;
     }
 
-    .section {
-        padding: 3rem 1rem;
-    }
-
-    .section h2 {
-        font-size: 1.8rem;
-    }
-
     .grid {
         grid-template-columns: 1fr;
     }
 
-    .cta {
-        padding: 3rem 1rem;
+    .artist-card {
+        padding: 1.5rem;
     }
 
-    .cta h2 {
-        font-size: 1.8rem;
+    .section,
+    .cta {
+        padding: 3rem 1.25rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .nav-links .btn {
+        width: auto;
     }
 }
 </style>
