@@ -209,4 +209,40 @@ h1 em {
     color: #7a7065;
     margin-bottom: 2rem;
 }
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta {
+        padding: 3rem 1rem;
+    }
+
+    .cta h2, .section h2 {
+        font-size: 1.8rem;
+    }
+}
 </style>
