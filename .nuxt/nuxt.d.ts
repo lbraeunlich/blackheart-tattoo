@@ -1,4 +1,3 @@
-/// <reference types="@vercel/analytics" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference path="types/nitro-layouts.d.ts" />
