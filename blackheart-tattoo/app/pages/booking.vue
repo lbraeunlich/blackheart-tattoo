@@ -182,6 +182,9 @@ html, body {
 .booking-hero {
     padding: 5rem 2rem 3rem;
     border-bottom: 1px solid #222;
+    background-image: url('/women.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .eyebrow {
