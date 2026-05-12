@@ -52,8 +52,14 @@
 </script>
 
 <style>
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
     background: #0a0a0a;
     color: #c8bfb5;
     font-family: Georgia, serif;
@@ -61,6 +67,7 @@ body {
 
 .page {
     min-height: 100vh;
+    width: 100%;
 }
 
 .nav {
@@ -72,7 +79,7 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 0.2em;
     color: #e8dfd3;
 }
@@ -104,12 +111,12 @@ body {
 
 .btn:hover {
     background: #000000;
-        color: #F5F5DC;
-
+    color: #F5F5DC;
 }
 
 .hero {
     min-height: 90vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -128,7 +135,7 @@ body {
 }
 
 h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2.5rem, 8vw, 6rem);
     color: #e8dfd3;
     line-height: 1;
     margin-bottom: 1.5rem;
@@ -149,6 +156,7 @@ h1 em {
 
 .section {
     padding: 5rem 2rem;
+    width: 100%;
 }
 
 .section h2 {
@@ -197,6 +205,7 @@ h1 em {
     text-align: center;
     background: #111;
     border-top: 1px solid #222;
+    width: 100%;
 }
 
 .cta h2 {
@@ -219,18 +228,31 @@ h1 em {
 
     .logo {
         font-size: 1rem;
+        text-align: center;
+        letter-spacing: 0.1em;
     }
 
     .nav-links {
-        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
     }
 
     .hero {
         padding: 2rem 1rem;
+        min-height: 80vh;
+    }
+
+    .sub {
+        font-size: 1rem;
     }
 
     .section {
         padding: 3rem 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
     }
 
     .grid {
@@ -241,7 +263,7 @@ h1 em {
         padding: 3rem 1rem;
     }
 
-    .cta h2, .section h2 {
+    .cta h2 {
         font-size: 1.8rem;
     }
 }
